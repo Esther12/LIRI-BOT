@@ -6,14 +6,26 @@ var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify);
 
 var fileName = '';
-var userInput = [];
-for(let i = 2; i < process.argv.length; i++){
-    userInput.push(process.argv[i]);
+//get user input
+var userInput = "";
+for(let i = 3; i < process.argv.length; i++){
+    userInput += process.argv[i] + "%20";
 }
+// var userInputs = ""
+// userInputs = userInput.toString().replace(',','%20');
 console.log(userInput);
 
+//get the song name
+var songName = "";
+if(userInput === " " ){
+    songName = "The Sign";
+}else{
+    songName = userInput;
+    console.log(songName);
+}
 
-switch(userInput[0]){
+switch(process.argv[2]){
+
     case "movie-this":
         movieSearch();
         break;
@@ -21,7 +33,7 @@ switch(userInput[0]){
         concertSearch();
         break;
     case "spotify-this-song":
-        songSearch();
+        songSearch(songName);
         break;
     case "do-what-it-says":
         getFileSearch();
@@ -32,14 +44,11 @@ switch(userInput[0]){
 
 
 // spotify search the song name
-function songSearch(){
-    var songName = userInput;
-    songName.shift();
-    var a = songName.toString();
-    console.log(a);
+
+function songSearch(song){
     spotify.search({
         type: 'track',
-        query: songName.toString(),
+        query: song,
         limit: 2
     }, function(err, data){
         if(err){
@@ -57,14 +66,13 @@ function songSearch(){
 
 function movieSearch(){
     var movieName = [];
-    if(userInput.toString() === userInput[0].toString() ){
+    if(userInput === " "){
         movieName = ["Mr. Nobody."];
     }else{
         movieName = userInput;
-        movieName.shift();
-        console.log(userInput.toString());
+        console.log(userInput);
     }
-    var queryUrl = "http://www.omdbapi.com/?t=" + movieName.toString() + "&y=&plot=short&apikey=trilogy";
+    var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
     console.log(queryUrl);
     axios.get(queryUrl).then(
         function(response){
@@ -84,9 +92,28 @@ function getFileSearch(){
     fs.readFile("random.txt", "utf8", function(err,data){
         if(err)
         console.log(err);
-        var fileInput = [];
+        var fileInput = "";
         fileInput = data.split(",");
         console.log(fileInput);
+        var a = "";
+        a = fileInput[1].toString();
+        console.log(a);
+        a.replace(' ','%20');
+        songSearch(a);
     })
 
+}
+
+function concertSearch(){
+    var concertName = userInput;
+    console.log(concertName);
+    var queryUrl = "https://rest.bandsintown.com/artists/" + concertName + "/events?app_id=codingbootcamp";
+    axios.get(queryUrl).then(function(err,data){
+            if(err)
+            console.log(err);
+           // console.log(data);
+            console.log("* Name of the venue : " + data.venue.name);
+            console.log("* Venue location : " + data.venue.country + " " +  data[0].venue.region + " " +  data[0].venue.city );
+            console.log("* Date of the Event : " + data.datetime);
+    })
 }
