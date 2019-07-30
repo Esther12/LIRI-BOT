@@ -25,9 +25,14 @@ console.log(userInput);
 // })
 
 if(userInput[0] === "movie-this"){
-    var movieName = userInput;
-    movieName.shift();
-    console.log(userInput.toString());
+    var movieName = [];
+    if(userInput.toString() === userInput[0].toString() ){
+        movieName = ["Mr. Nobody."];
+    }else{
+        movieName = userInput;
+        movieName.shift();
+        console.log(userInput.toString());
+    }
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName.toString() + "&y=&plot=short&apikey=trilogy";
     console.log(queryUrl);
     axios.get(queryUrl).then(
