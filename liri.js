@@ -12,19 +12,42 @@ for(let i = 2; i < process.argv.length; i++){
 }
 console.log(userInput);
 
+
+switch(userInput[0]){
+    case "movie-this":
+        movieSearch();
+        break;
+    case "concert-this":
+        concertSearch();
+        break;
+    case "spotify-this-song":
+        songSearch();
+        break;
+    case "do -what-it-says":
+        getFileSearch();
+        break;
+    default:
+        console.log("ERROR!!!!");
+}
+
+
 // spotify search the song name
+function songSearch(){
+    spotify.search({
+        type: 'track',
+        query: "Bad boy"
+    }, function(err, data){
+        if(err){
+            console.log(err);
+        }
+        console.log(data);
+    })
+}
 
-// spotify.search({
-//     type: 'track',
-//     query: "Bad boy"
-// }, function(err, data){
-//     if(err){
-//         console.log(err);
-//     }
-//     console.log(data);
-// })
 
-if(userInput[0] === "movie-this"){
+// OMDB movide Search
+
+function movieSearch(){
     var movieName = [];
     if(userInput.toString() === userInput[0].toString() ){
         movieName = ["Mr. Nobody."];
@@ -47,4 +70,14 @@ if(userInput[0] === "movie-this"){
             console.log("* Language of the movie : " + response.data.Language);
             console.log("* Actors in the movie : " + response.data.Actors);
         });
+}
+
+function getFileSearch(){
+    fs.readFile("random.txt", "utf8", function(err,data){
+        if(err)
+        console.log(err);
+        var fileInput = [];
+        fileInput = data.split(",");
+        console.log(fileInput);
+    })
 }
