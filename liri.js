@@ -23,7 +23,7 @@ switch(userInput[0]){
     case "spotify-this-song":
         songSearch();
         break;
-    case "do -what-it-says":
+    case "do-what-it-says":
         getFileSearch();
         break;
     default:
@@ -33,14 +33,22 @@ switch(userInput[0]){
 
 // spotify search the song name
 function songSearch(){
+    var songName = userInput;
+    songName.shift();
+    var a = songName.toString();
+    console.log(a);
     spotify.search({
         type: 'track',
-        query: "Bad boy"
+        query: songName.toString(),
+        limit: 2
     }, function(err, data){
         if(err){
             console.log(err);
         }
-        console.log(data);
+        console.log("* Artist : " + data.tracks.items[0].album.artists[0].name);
+        console.log("* The song's name : " + data.tracks.items[0].name);
+        console.log("* A preview link of the song from Spotify : " + data.tracks.items[0].preview_url);
+        console.log("* The album that the song is from : " + data.tracks.items[0].album.name);
     })
 }
 
@@ -80,4 +88,5 @@ function getFileSearch(){
         fileInput = data.split(",");
         console.log(fileInput);
     })
+
 }
