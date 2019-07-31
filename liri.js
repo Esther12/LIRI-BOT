@@ -8,7 +8,7 @@ var spotify = new Spotify(keys.spotify);
 //get user input
 var userInput = "";
 for(let i = 3; i < process.argv.length; i++){
-    userInput += process.argv[i];
+    userInput += process.argv[i] + "%20";
 }
 // var userInputs = ""
 // userInputs = userInput.toString().replace(',','%20');
@@ -129,7 +129,7 @@ function getFileSearch(){
 }
 
 function concertSearch(){
-    var concertName = userInput;
+    var concertName = process.argv.slice(3).join(" ");
     //console.log(concertName);
     var queryUrl = "https://rest.bandsintown.com/artists/" + concertName + "/events?app_id=codingbootcamp";
     axios.get(queryUrl).then(function(response){
