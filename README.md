@@ -17,10 +17,26 @@ this is loaded
 
 ###### How users can get started with the project
 
->First
-```
-![Final Layout](images/GetClone.png)
-```
+Step 1:
+>Get the git Clone web URL
+
+![GetClone](images/GetClone.png)
+
+Step 2:
+>Going to your command line type and past the URL you just copy
+![clone](images/clone.png)
+
+Step 3:
+>Install all packages that you need, by doing follow
+![PackageInsatll](images/InstallPackage.png)
+
+Step 4:
+>Finally you can use it!!!!
+![How to use it](images/StartUsing.png)
 
 ###### Where users can get help with your project
+Find Bugs and give opinions help me grow!!!
+
 ###### Who maintains and contributes to the project
+
+The Owner
