@@ -1,15 +1,13 @@
 require("dotenv").config();
-var fs = require("fs");
-var axios = require("axios");
 var Spotify = require('node-spotify-api'); 
 var keys = require("./keys.js");
+var fs = require("fs");
+var axios = require("axios");
 var spotify = new Spotify(keys.spotify);
-
-var fileName = '';
 //get user input
 var userInput = "";
 for(let i = 3; i < process.argv.length; i++){
-    userInput += process.argv[i] + "%20";
+    userInput += process.argv[i];
 }
 // var userInputs = ""
 // userInputs = userInput.toString().replace(',','%20');
@@ -106,14 +104,12 @@ function getFileSearch(){
 
 function concertSearch(){
     var concertName = userInput;
-    console.log(concertName);
+    //console.log(concertName);
     var queryUrl = "https://rest.bandsintown.com/artists/" + concertName + "/events?app_id=codingbootcamp";
-    axios.get(queryUrl).then(function(err,data){
-            if(err)
-            console.log(err);
-           // console.log(data);
-            console.log("* Name of the venue : " + data.venue.name);
-            console.log("* Venue location : " + data.venue.country + " " +  data[0].venue.region + " " +  data[0].venue.city );
-            console.log("* Date of the Event : " + data.datetime);
+    axios.get(queryUrl).then(function(data){
+            //console.log(data.data);
+            console.log("* Name of the venue : " + data.data[1].venue.name);
+            console.log("* Venue location : " + data.data[1].venue.country + " " +  data.data[1].venue.region + " " +  data.data[1].venue.city );
+            console.log("* Date of the Event : " + data.data[1].datetime);
     })
 }
