@@ -17,3 +17,9 @@ bash-3.2$ exit
 exit
 
 Script done on Tue Jul 30 08:36:47 2019
+
+                **************Concerts************
+                * Name of the venue :  Seminole Hard Rock Hotel & Casino - Hollywood, FL
+                * Venue location :  United States   FL   Hollywood
+                * Date of the Event :  10/25/2019
+            

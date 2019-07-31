@@ -3,6 +3,7 @@ var Spotify = require('node-spotify-api');
 var keys = require("./keys.js");
 var fs = require("fs");
 var axios = require("axios");
+var moment = require("moment");
 var spotify = new Spotify(keys.spotify);
 //get user input
 var userInput = "";
@@ -48,14 +49,24 @@ function songSearch(song){
         type: 'track',
         query: song,
         limit: 2
-    }, function(err, data){
+    }, function(err, result){
         if(err){
             console.log(err);
         }
-        console.log("* Artist : " + data.tracks.items[0].album.artists[0].name);
-        console.log("* The song's name : " + data.tracks.items[0].name);
-        console.log("* A preview link of the song from Spotify : " + data.tracks.items[0].preview_url);
-        console.log("* The album that the song is from : " + data.tracks.items[0].album.name);
+        var data = result.tracks.items[0];
+        fs.appendFile("log.txt",`
+        **************Songs************
+        * Artist :  ${data.album.artists[0].name}
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  ${data.preview_url}
+        * The album that the song is from : ${data.album.name}
+        `,function(err){
+            if (err) throw err;
+        });
+        console.log("* Artist : " + data.album.artists[0].name);
+        console.log("* The song's name : " + data.name);
+        console.log("* A preview link of the song from Spotify : " + data.preview_url);
+        console.log("* The album that the song is from : " + data.album.name);
     })
 }
 
@@ -75,14 +86,29 @@ function movieSearch(){
     axios.get(queryUrl).then(
         function(response){
             
-            console.log("* The tiltle of the Movie : " + response.data.Title);
-            console.log("* The Released Year : " + response.data.Year);
-            console.log("* The Discription : " + response.data.Plot);
-            console.log("* IMDB Rating of the Movie : " + response.data.imdbRating);  
-            console.log("* Rotten Tomatoes Rating of the moive : " + response.data.Ratings[1].Value);
-            console.log("* Country where the movie was produced : " + response.data.Country);
-            console.log("* Language of the movie : " + response.data.Language);
-            console.log("* Actors in the movie : " + response.data.Actors);
+            var data = response.data;
+            fs.appendFile("log.txt",`
+                **************Movies************
+                * The tiltle of the Movie :  ${data.Title}
+                * The Released Year :  ${data.Year}
+                * The Discription :  ${data.Plot}
+                * IMDB Rating of the Movie :  ${data.imdbRating}
+                * Rotten Tomatoes Rating of the moive :  ${data.Ratings[1].Value}
+                * Country where the movie was produced :  ${data.Country}
+                * Language of the movie :  ${data.Language}
+                * Actors in the movie :  $
+                * {data.Actors}
+            `,function(err){
+                if (err) throw err;
+            });
+            console.log("* The tiltle of the Movie : " + data.Title);
+            console.log("* The Released Year : " + data.Year);
+            console.log("* The Discription : " + data.Plot);
+            console.log("* IMDB Rating of the Movie : " + data.imdbRating);  
+            console.log("* Rotten Tomatoes Rating of the moive : " + data.Ratings[1].Value);
+            console.log("* Country where the movie was produced : " + data.Country);
+            console.log("* Language of the movie : " + data.Language);
+            console.log("* Actors in the movie : " + data.Actors);
         });
 }
 
@@ -106,10 +132,19 @@ function concertSearch(){
     var concertName = userInput;
     //console.log(concertName);
     var queryUrl = "https://rest.bandsintown.com/artists/" + concertName + "/events?app_id=codingbootcamp";
-    axios.get(queryUrl).then(function(data){
+    axios.get(queryUrl).then(function(response){
             //console.log(data.data);
-            console.log("* Name of the venue : " + data.data[1].venue.name);
-            console.log("* Venue location : " + data.data[1].venue.country + " " +  data.data[1].venue.region + " " +  data.data[1].venue.city );
-            console.log("* Date of the Event : " + data.data[1].datetime);
+            var data = response.data[1].venue;
+            fs.appendFile("log.txt",`
+                **************Concerts************
+                * Name of the venue :  ${data.name}
+                * Venue location :  ${data.country}   ${data.region}   ${data.city}
+                * Date of the Event :  ${moment(response.data[1].datetime).format("MM/DD/YYYY")}
+            `,function(err){
+                if (err) throw err;
+            });
+            console.log("* Name of the venue : " + data.name);
+            console.log("* Venue location : " + data.country + " " +  data.region + " " +  data.city );
+            console.log("* Date of the Event : " + moment(response.data[1].datetime).format("MM/DD/YYYY"));
     })
 }
