@@ -6,10 +6,7 @@ var axios = require("axios");
 var moment = require("moment");
 var spotify = new Spotify(keys.spotify);
 //get user input
-var userInput = "";
-for(let i = 3; i < process.argv.length; i++){
-    userInput += process.argv[i] + "%20";
-}
+var userInput = process.argv.slice(3).join(" ");
 // var userInputs = ""
 // userInputs = userInput.toString().replace(',','%20');
 console.log(userInput);
@@ -22,26 +19,48 @@ if(userInput === " " ){
     songName = userInput;
     console.log(songName);
 }
+function searchLiri(method, contant){
+    if (method === " "){
+        method = "do-what-it-says";
+    }else{
+        switch(method){
 
-switch(process.argv[2]){
-
-    case "movie-this":
-        movieSearch();
-        break;
-    case "concert-this":
-        concertSearch();
-        break;
-    case "spotify-this-song":
-        songSearch(songName);
-        break;
-    case "do-what-it-says":
-        getFileSearch();
-        break;
-    default:
-        console.log("ERROR!!!!");
+            case "movie-this":
+                movieSearch(contant);
+                break;
+            case "concert-this":
+                concertSearch(contant);
+                break;
+            case "spotify-this-song":
+                songSearch(contant);
+                break;
+            case "do-what-it-says":
+                getFileSearch(contant);
+                break;
+            default:
+                console.log("ERROR!!!!");
+        }
+    }
 }
+// switch(process.argv[2]){
 
+//     case "movie-this":
+//         movieSearch();
+//         break;
+//     case "concert-this":
+//         concertSearch();
+//         break;
+//     case "spotify-this-song":
+//         songSearch(songName);
+//         break;
+//     case "do-what-it-says":
+//         getFileSearch();
+//         break;
+//     default:
+//         console.log("ERROR!!!!");
+// }
 
+searchLiri(process.argv[2],userInput);
 // spotify search the song name
 
 function songSearch(song){
@@ -73,14 +92,8 @@ function songSearch(song){
 
 // OMDB movide Search
 
-function movieSearch(){
-    var movieName = [];
-    if(userInput === " "){
-        movieName = ["Mr. Nobody."];
-    }else{
-        movieName = userInput;
-        console.log(userInput);
-    }
+function movieSearch(movieName){
+
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
     console.log(queryUrl);
     axios.get(queryUrl).then(
@@ -119,18 +132,25 @@ function getFileSearch(){
         var fileInput = "";
         fileInput = data.split(",");
         console.log(fileInput);
+        var num = Math.floor(Math.random()*fileInput.length);
+        if((num%2) == 0){
+            console.log(num);
+        }else{
+            num +=1;
+            console.log(num);
+        }
         var a = "";
-        a = fileInput[1].toString();
-        console.log(a);
-        a.replace(' ','%20');
-        songSearch(a);
+        var b = "";
+        a = fileInput[num].toString();
+        b = fileInput[num+1].toString();
+        console.log(a,b);
+        searchLiri(a,b);
     })
 
 }
 
-function concertSearch(){
-    var concertName = process.argv.slice(3).join(" ");
-    //console.log(concertName);
+function concertSearch(concertName){
+
     var queryUrl = "https://rest.bandsintown.com/artists/" + concertName + "/events?app_id=codingbootcamp";
     axios.get(queryUrl).then(function(response){
             //console.log(data.data);

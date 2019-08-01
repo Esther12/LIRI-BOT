@@ -111,3 +111,61 @@ Script done on Tue Jul 30 08:36:47 2019
                 * Venue location :  United States   FL   Hollywood
                 * Date of the Event :  10/25/2019
             
+        **************Songs************
+        * Artist :  Backstreet Boys
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=bf6aa131c473417bb4bdec6c10291e8e
+        * The album that the song is from : The Hits--Chapter One
+        
+        **************Songs************
+        * Artist :  Backstreet Boys
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=bf6aa131c473417bb4bdec6c10291e8e
+        * The album that the song is from : The Hits--Chapter One
+        
+        **************Songs************
+        * Artist :  Backstreet Boys
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=bf6aa131c473417bb4bdec6c10291e8e
+        * The album that the song is from : The Hits--Chapter One
+        
+        **************Songs************
+        * Artist :  Backstreet Boys
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=bf6aa131c473417bb4bdec6c10291e8e
+        * The album that the song is from : The Hits--Chapter One
+        
+        **************Songs************
+        * Artist :  Taylor Swift
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  null
+        * The album that the song is from : Speak Now (Deluxe Edition)
+        
+        **************Songs************
+        * Artist :  Niall Horan
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  null
+        * The album that the song is from : Flicker Featuring The RTÉ Concert Orchestra (Live)
+        
+                **************Concerts************
+                * Name of the venue :  Seminole Hard Rock Hotel & Casino - Hollywood, FL
+                * Venue location :  United States   FL   Hollywood
+                * Date of the Event :  10/25/2019
+            
+                **************Movies************
+                * The tiltle of the Movie :  The Lion King
+                * The Released Year :  1994
+                * The Discription :  A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+                * IMDB Rating of the Movie :  8.5
+                * Rotten Tomatoes Rating of the moive :  93%
+                * Country where the movie was produced :  USA
+                * Language of the movie :  English, Swahili, Xhosa, Zulu
+                * Actors in the movie :  $
+                * {data.Actors}
+            
+        **************Songs************
+        * Artist :  Rita Springer
+        * The song's name :  {data.name}
+        * A preview link of the song from Spotify :  https://p.scdn.co/mp3-preview/2854dcd7c0f49ec7220f7c2a941aa763e0ee1359?cid=bf6aa131c473417bb4bdec6c10291e8e
+        * The album that the song is from : Rise Up!
+        
