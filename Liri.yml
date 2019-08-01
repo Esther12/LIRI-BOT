@@ -1,0 +1,431 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 80
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 24
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Terminalizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 697
+    content: "Restored session: Wed Jul 31 16:36:40 EDT 2019\r\n"
+  - delay: 52
+    content: "\e]7;file://Yatings-MBP/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT\a\e[?1034hYatings-MBP:LIRI_BOT esthersu$ "
+  - delay: 3433
+    content: 'node liri.js '
+  - delay: 308
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\bbrew info asciinema"
+  - delay: 280
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\e[K"
+  - delay: 419
+    content: "\b\b\b\bcd ../"
+  - delay: 326
+    content: "\b\b\b\b\b\b\e[4Pls"
+  - delay: 407
+    content: "\b\bcd ../"
+  - delay: 282
+    content: "\b\b\b\b\b\b\e[2Pbrew"
+  - delay: 263
+    content: ' info asciinema'
+  - delay: 523
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\e[6Pnode liri.js "
+  - delay: 508
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\e[K"
+  - delay: 826
+    content: 'node liri.js '
+  - delay: 2091
+    content: m
+  - delay: 252
+    content: o
+  - delay: 233
+    content: v
+  - delay: 277
+    content: i
+  - delay: 1072
+    content: e
+  - delay: 361
+    content: '-'
+  - delay: 279
+    content: t
+  - delay: 139
+    content: h
+  - delay: 132
+    content: i
+  - delay: 217
+    content: s
+  - delay: 721
+    content: ' '
+  - delay: 662
+    content: t
+  - delay: 111
+    content: h
+  - delay: 199
+    content: e
+  - delay: 961
+    content: ' '
+  - delay: 293
+    content: l
+  - delay: 239
+    content: i
+  - delay: 174
+    content: o
+  - delay: 247
+    content: 'n'
+  - delay: 1073
+    content: ' '
+  - delay: 346
+    content: k
+  - delay: 195
+    content: i
+  - delay: 177
+    content: 'n'
+  - delay: 147
+    content: g
+  - delay: 344
+    content: "\r\n"
+  - delay: 342
+    content: "this is loaded\r\n"
+  - delay: 28
+    content: "the%20lion%20king%20\r\nthe%20lion%20king%20\r\nthe%20lion%20king%20\r\nhttp://www.omdbapi.com/?t=the%20lion%20king%20&y=&plot=short&apikey=trilogy\r\n"
+  - delay: 166
+    content: "* The tiltle of the Movie : The Lion King\r\n* The Released Year : 1994\r\n* The Discription : A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.\r\n* IMDB Rating of the Movie : 8.5\r\n* Rotten Tomatoes Rating of the moive : 93%\r\n* Country where the movie was produced : USA\r\n* Language of the movie : English, Swahili, Xhosa, Zulu\r\n* Actors in the movie : Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings\r\n"
+  - delay: 11
+    content: "\e]7;file://Yatings-MBP/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT\aYatings-MBP:LIRI_BOT esthersu$ "
+  - delay: 3368
+    content: node liri.js movie-this the lion king
+  - delay: 439
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\e[K"
+  - delay: 2837
+    content: s
+  - delay: 205
+    content: p
+  - delay: 247
+    content: o
+  - delay: 448
+    content: t
+  - delay: 325
+    content: i
+  - delay: 266
+    content: f
+  - delay: 257
+    content: 'y'
+  - delay: 1319
+    content: '-'
+  - delay: 293
+    content: t
+  - delay: 116
+    content: h
+  - delay: 124
+    content: i
+  - delay: 153
+    content: s
+  - delay: 2061
+    content: '-'
+  - delay: 267
+    content: s
+  - delay: 168
+    content: o
+  - delay: 210
+    content: 'n'
+  - delay: 185
+    content: g
+  - delay: 1449
+    content: ' '
+  - delay: 1743
+    content: b
+  - delay: 225
+    content: a
+  - delay: 415
+    content: d
+  - delay: 276
+    content: ' '
+  - delay: 389
+    content: b
+  - delay: 517
+    content: o
+  - delay: 458
+    content: 'y'
+  - delay: 1101
+    content: "\r\n"
+  - delay: 332
+    content: "this is loaded\r\n"
+  - delay: 22
+    content: "bad%20boy%20\r\nbad%20boy%20\r\n"
+  - delay: 481
+    content: "TypeError: Cannot read property 'album' of undefined\r\n    at /Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/liri.js:59:28\r\n    at request.then (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/node-spotify-api/src/index.js:52:29)\r\n    at tryCatcher (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/util.js:16:23)\r\n    at Promise._settlePromiseFromHandler (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:517:31)\r\n    at Promise._settlePromise (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:574:18)\r\n    at Promise._settlePromise0 (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:619:10)\r\n    at Promise._settlePromises (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:699:18)\r\n    at _drainQueueStep (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:138:12)\r\n    at _drainQueue (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:131:9)\r\n    at Async._drainQueues (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:147:5)\r\n    at Immediate.Async.drainQueues [as _onImmediate] (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:17:14)\r\n    at processImmediate (timers.js:632:19)\r\n\e[31mUnhandled rejection TypeError: Cannot read property 'tracks' of null\r\n    at /Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/liri.js:56:27\r\n    at request.then.catch (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/node-spotify-api/src/index.js:53:25)\r\n    at tryCatcher (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/util.js:16:23)\r\n    at Promise._settlePromiseFromHandler (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:517:31)\r\n    at Promise._settlePromise (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:574:18)\r\n    at Promise._settlePromise0 (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:619:10)\r\n    at Promise._settlePromises (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/promise.js:695:18)\r\n    at _drainQueueStep (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:138:12)\r\n    at _drainQueue (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:131:9)\r\n    at Async._drainQueues (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:147:5)\r\n    at Immediate.Async.drainQueues [as _onImmediate] (/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT/node_modules/bluebird/js/release/async.js:17:14)\r\n    at processImmediate (timers.js:632:19)\e[0m\r\n\r\n"
+  - delay: 12
+    content: "\e]7;file://Yatings-MBP/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT\aYatings-MBP:LIRI_BOT esthersu$ "
+  - delay: 6689
+    content: node liri.js spotify-this-song bad boy
+  - delay: 1125
+    content: "\b\e[K"
+  - delay: 174
+    content: "\b\e[K"
+  - delay: 148
+    content: "\b\e[K"
+  - delay: 473
+    content: "\b\e[K"
+  - delay: 214
+    content: "\b\e[K"
+  - delay: 168
+    content: "\b\e[K"
+  - delay: 178
+    content: "\b\e[K"
+  - delay: 8113
+    content: H
+  - delay: 358
+    content: o
+  - delay: 259
+    content: 'n'
+  - delay: 1190
+    content: e
+  - delay: 181
+    content: 'y'
+  - delay: 755
+    content: "\r\n"
+  - delay: 290
+    content: "this is loaded\r\n"
+  - delay: 21
+    content: "Honey%20\r\nHoney%20\r\n"
+  - delay: 437
+    content: "* Artist : Jackie Clark\r\n* The song's name : Honey 20\r\n* A preview link of the song from Spotify : https://p.scdn.co/mp3-preview/74b96e30731537b154a0b8c1f9782a1b3e54c194?cid=bf6aa131c473417bb4bdec6c10291e8e\r\n* The album that the song is from : Honey 20\r\n"
+  - delay: 11
+    content: "\e]7;file://Yatings-MBP/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT\aYatings-MBP:LIRI_BOT esthersu$ "
+  - delay: 2876
+    content: node liri.js spotify-this-song Honey
+  - delay: 1601
+    content: "\b\b\b\b\bbad boy"
+  - delay: 488
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\e[1Pmovie-this the lion king"
+  - delay: 580
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\e[K"
+  - delay: 2274
+    content: d
+  - delay: 221
+    content: o
+  - delay: 746
+    content: '-'
+  - delay: 253
+    content: w
+  - delay: 232
+    content: h
+  - delay: 203
+    content: a
+  - delay: 285
+    content: t
+  - delay: 919
+    content: '-'
+  - delay: 386
+    content: i
+  - delay: 225
+    content: t
+  - delay: 537
+    content: '-'
+  - delay: 237
+    content: s
+  - delay: 233
+    content: a
+  - delay: 236
+    content: 'y'
+  - delay: 529
+    content: s
+  - delay: 412
+    content: "\r\n"
+  - delay: 278
+    content: "this is loaded\r\n"
+  - delay: 22
+    content: "\r\n\r\n"
+  - delay: 8
+    content: "[ \e[32m'spotify-this-song'\e[39m, \e[32m'\"I Want it That Way\"'\e[39m ]\r\n\"I Want it That Way\"\r\n"
+  - delay: 625
+    content: "* Artist : Backstreet Boys\r\n* The song's name : I Want It That Way\r\n* A preview link of the song from Spotify : https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=bf6aa131c473417bb4bdec6c10291e8e\r\n* The album that the song is from : The Hits--Chapter One\r\n"
+  - delay: 12
+    content: "\e]7;file://Yatings-MBP/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT\aYatings-MBP:LIRI_BOT esthersu$ "
+  - delay: 2261
+    content: 'n'
+  - delay: 265
+    content: o
+  - delay: 171
+    content: d
+  - delay: 131
+    content: e
+  - delay: 1788
+    content: "\b\e[K"
+  - delay: 140
+    content: "\b\e[K"
+  - delay: 150
+    content: "\b\e[K"
+  - delay: 126
+    content: "\b\e[K"
+  - delay: 529
+    content: node liri.js do-what-it-says
+  - delay: 175
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bspotify-this-song Honey"
+  - delay: 179
+    content: "\b\b\b\b\bbad boy"
+  - delay: 166
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\e[1Pmovie-this the lion king"
+  - delay: 214
+    content: "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\e[K"
+  - delay: 4018
+    content: c
+  - delay: 162
+    content: o
+  - delay: 260
+    content: 'n'
+  - delay: 243
+    content: c
+  - delay: 275
+    content: e
+  - delay: 137
+    content: r
+  - delay: 359
+    content: t
+  - delay: 2696
+    content: '-'
+  - delay: 251
+    content: t
+  - delay: 136
+    content: h
+  - delay: 124
+    content: i
+  - delay: 147
+    content: s
+  - delay: 268
+    content: ' '
+  - delay: 788
+    content: M
+  - delay: 703
+    content: a
+  - delay: 468
+    content: r
+  - delay: 1553
+    content: o
+  - delay: 218
+    content: o
+  - delay: 372
+    content: 'n'
+  - delay: 513
+    content: ' '
+  - delay: 544
+    content: '5'
+  - delay: 177
+    content: "\r\n"
+  - delay: 269
+    content: "this is loaded\r\n"
+  - delay: 21
+    content: "Maroon%205%20\r\nMaroon%205%20\r\n"
+  - delay: 226
+    content: "* Name of the venue : Seminole Hard Rock Hotel & Casino - Hollywood, FL\r\n* Venue location : United States FL Hollywood\r\n* Date of the Event : 10/25/2019\r\n"
+  - delay: 11
+    content: "\e]7;file://Yatings-MBP/Users/esthersu/Desktop/Developer/BootCampProgram/Module-9/LIRI_BOT\aYatings-MBP:LIRI_BOT esthersu$ "
+  - delay: 9601
+    content: "logout\r\nSaving session..."
+  - delay: 12
+    content: "\r\n...saving history..."
+  - delay: 12
+    content: "truncating history files...\r\n...completed.\r\n"
