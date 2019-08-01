@@ -14,6 +14,7 @@ this is loaded
 * Venue location : United States FL Hollywood
 * Date of the Event : 10/25/2019
 ```
+![Example](render1564622535241.gif)
 
 ###### How users can get started with the project
 
